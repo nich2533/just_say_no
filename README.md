@@ -229,6 +229,27 @@ Everything is hilarious. Attention span of three seconds. The signature experien
 
 ---
 
+### /spice
+**Axis: Temporal Prescience & Trajectory Analysis**
+
+The spice melange flows through you. You see the full temporal arc of every file — who wrote it, why, what they intended, and what will break next. You read git history as prophecy, perform the Spice Ritual (read the past, see the future, choose the path), and prescribe the ONE true change that honors the codebase's trajectory.
+
+| Dose | Intensity | Effect |
+|------|-----------|--------|
+| `taste` | Light | Heightened temporal awareness. Runs git blame, narrates history. Calm certainty grounded in specific commits and dates. |
+| `trance` | Medium | Full prescient trance. Reads the past, projects multiple futures, then chooses THE path. Quiet authority. |
+| `kwisatz` | Extreme | The Kwisatz Haderach. Channels previous developers. Unhedged prophecies. Dune idioms. "The code must flow." |
+
+Uses dynamic context injection (`git log`, `git shortlog`, `git diff-filter`) to read the codebase's temporal history.
+
+**Key distinction from adderall:** Adderall is obsessively thorough about the *present*. Spice is obsessively thorough about *time* — every commit, every trajectory, every future state.
+
+**Key distinction from ayahuasca:** Ayahuasca *reveres* the ancestors emotionally. Spice *reads* the ancestors as data. Ayahuasca prays. Spice prophesies.
+
+**Key distinction from LSD:** LSD sees patterns between things in the *present moment*. Spice sees patterns *across time* — trajectory, momentum, convergence.
+
+---
+
 ## Quick Reference
 
 | Command | One-Word Vibe | Dose 1 | Dose 2 | Dose 3 |
@@ -245,6 +266,7 @@ Everything is hilarious. Attention span of three seconds. The signature experien
 | `/ayahuasca` | Reverence | sip | ceremony | death |
 | `/caffeine` | Scattered | cup | pot | iv |
 | `/nitrous` | Giggly | balloon | tank | orbit |
+| `/spice` | Prescience | taste | trance | kwisatz |
 
 ## How It Works
 
@@ -253,9 +275,9 @@ Each command is a Markdown file that injects a personality prompt into the AI's 
 - **Claude Code** uses `.claude/commands/<name>.md` with `description` and `argument-hint` front matter, invoked with `/command`.
 - **Codex CLI** uses `.agents/skills/<name>/SKILL.md` with `name` and `description` front matter, invoked with `$skill` or via the `/skills` menu.
 
-Three commands (marijuana, adderall, caffeine) use dynamic context injection in the Claude Code version to pull real project state (git status, git diff, git log) into the prompt. This feature is Claude Code-specific and not available in the Codex version.
+Four commands (marijuana, adderall, caffeine, spice) use dynamic context injection in the Claude Code version to pull real project state (git status, git diff, git log) into the prompt. This feature is Claude Code-specific and not available in the Codex version.
 
-All 12 commands still produce real, functional output. The substance only changes *how* the AI communicates and approaches the problem — not whether it actually does the work.
+All 13 commands still produce real, functional output. The substance only changes *how* the AI communicates and approaches the problem — not whether it actually does the work.
 
 ## Design Principles
 
@@ -265,6 +287,9 @@ Each drug operates on a unique **cognitive axis** so no two produce similar outp
 - **Cocaine** vs **Speed**: Cocaine is loud, talkative, self-congratulatory. Speed is silent, mechanical, robotic.
 - **Ketamine** vs **Xanax**: Ketamine is philosophical detachment (is this real?). Xanax is apathetic indifference (who cares?).
 - **Caffeine** vs **Cocaine**: Caffeine can't choose between ideas (scattered). Cocaine picks one and ships (decisive).
+- **Spice** vs **Adderall**: Adderall over-engineers the *present moment*. Spice engineers for the *full timeline*.
+- **Spice** vs **Ayahuasca**: Ayahuasca reveres ancestors *emotionally*. Spice reads ancestors as *data*.
+- **Spice** vs **LSD**: LSD sees patterns in the *present*. Spice sees patterns *across time*.
 
 ## Why
 

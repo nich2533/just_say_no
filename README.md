@@ -1,6 +1,6 @@
 # Just Say No
 
-Altered state commands for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [OpenAI Codex CLI](https://github.com/openai/codex). Each command makes your AI perform your task under the influence of a different substance, changing its creative perspective, communication style, and problem-solving approach.
+Altered state skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [OpenAI Codex CLI](https://github.com/openai/codex). Each skill makes your AI perform your task under the influence of a different substance, changing its creative perspective, communication style, and problem-solving approach.
 
 Drugs are bad. But these ones are just prompts.
 
@@ -8,18 +8,18 @@ Drugs are bad. But these ones are just prompts.
 
 ### Claude Code
 
-Copy the `.claude/commands/` directory into your project root. The commands will be available in any Claude Code session within that project.
+Copy the `.claude/skills/` directory into your project root. The skills will be available in any Claude Code session within that project.
 
 ```
 your-project/
   .claude/
-    commands/
-      lsd.md
-      cocaine.md
+    skills/
+      lsd/SKILL.md
+      cocaine/SKILL.md
       ...
 ```
 
-For global access across all projects, copy the command files to `~/.claude/commands/` instead.
+For global access across all projects, copy the skill directories to `~/.claude/skills/` instead.
 
 ### Codex CLI
 
@@ -48,7 +48,7 @@ For global access across all projects, copy the skill directories to `~/.agents/
 $lsd [dose] [your task here]
 ```
 
-Every command takes an optional dose level as the first word, followed by your task. If you skip the dose, it defaults to the medium tier.
+Every skill takes an optional dose level as the first word, followed by your task. If you skip the dose, it defaults to the medium tier.
 
 ```
 /lsd hit refactor this function          # light dose (Claude Code)
@@ -270,14 +270,14 @@ Uses dynamic context injection (`git log`, `git shortlog`, `git diff-filter`) to
 
 ## How It Works
 
-Each command is a Markdown file that injects a personality prompt into the AI's context when invoked. The `$ARGUMENTS` variable captures everything you type after the command name. The prompt instructs the AI to parse the first word as a dose level and treat the rest as the task.
+Each skill is a Markdown file (`SKILL.md`) that injects a personality prompt into the AI's context when invoked. The `$ARGUMENTS` variable captures everything you type after the skill name. The prompt instructs the AI to parse the first word as a dose level and treat the rest as the task.
 
-- **Claude Code** uses `.claude/commands/<name>.md` with `description` and `argument-hint` front matter, invoked with `/command`.
+- **Claude Code** uses `.claude/skills/<name>/SKILL.md` with `name` and `description` front matter, invoked with `/skill`.
 - **Codex CLI** uses `.agents/skills/<name>/SKILL.md` with `name` and `description` front matter, invoked with `$skill` or via the `/skills` menu.
 
-Four commands (marijuana, adderall, caffeine, spice) use dynamic context injection in the Claude Code version to pull real project state (git status, git diff, git log) into the prompt. This feature is Claude Code-specific and not available in the Codex version.
+Four skills (marijuana, adderall, caffeine, spice) use dynamic context injection to pull real project state (git status, git diff, git log) into the prompt.
 
-All 13 commands still produce real, functional output. The substance only changes *how* the AI communicates and approaches the problem — not whether it actually does the work.
+All 13 skills still produce real, functional output. The substance only changes *how* the AI communicates and approaches the problem — not whether it actually does the work.
 
 ## Design Principles
 
